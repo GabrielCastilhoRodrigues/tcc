@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="assets/img/rastaurantes/Logo.png" alt="logo" class="logo"></a>
+        <a href="/"><img src="assets/img/rastaurantes/Logo.png" alt="logo" class="logo"></a>
     </header>
 
     <div class="titulo">
@@ -19,7 +19,7 @@
 
     <main>
         <section class="itens-principais">
-            <a href="./jangada.html">
+            <a href="jangada">
                 <div class="item-grande">
                     <img src="assets/img/rastaurantes/jangada.jpeg" alt="maluca" class="foto-item">
                     <p class="card-title">JANGADA</p>

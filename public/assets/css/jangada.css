@@ -1023,3 +1023,29 @@ textarea,
         margin: 5px 0;
     }
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+}
+
+.logo img {
+    width: 150px;
+    cursor: pointer;
+}
+
+.button a {
+    padding: 10px 8px;
+    border-radius: .4rem;
+    background-color: rgb(255, 246, 246);
+    color: black;
+    margin: 5px;
+    transition: ease-in-out;
+    transition: .4s;
+}
+
+.button a:hover {
+    background-color: rgb(224, 224, 224);
+}

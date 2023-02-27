@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="assets/img/pizzaria/Logo.png" alt="logo" class="logo"></a>
+        <a href="/"><img src="assets/img/pizzaria/Logo.png" alt="logo" class="logo"></a>
     </header>
 
     <div class="titulo">
@@ -46,7 +46,7 @@
                 </div>
             </a>
 
-            <a href="./milanos.html">
+            <a href="milanos">
                 <div class="item-grande">
                     <img src="assets/img/pizzaria/millanos.png" alt="Millano's" class="foto-item">
                     <p class="card-title">MILLANO'S</p>

@@ -11,7 +11,19 @@
 </head>
 
 <body>
+    <section class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/img/principal/logo.png" alt="Logo">
+            </a>
+        </div>
+        
+        <h1 class="title">Aqui você encontra os melhores lugares!</h1>
 
+        <div class="button" id="menu">
+            <a href="Cadastro">Cadastre-se</a>
+        </div>
+    </section>
 
     <nav>
         <div class="logo">Seattle Bar</div>

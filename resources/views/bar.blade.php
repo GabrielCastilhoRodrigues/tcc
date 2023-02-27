@@ -9,11 +9,15 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="assets/img/bar/Logo.png" alt="logo" class="logo"></a>
+        <a href="/">
+            <img src="assets/img/bar/Logo.png" alt="logo" class="logo">
+        </a>
     </header>
 
     <div class="titulo">
-        <strong><p id="topo">BEM VINDO AOS MELHORES BARES DA CIDADE!</p></strong>
+        <strong>
+            <p id="topo">BEM VINDO AOS MELHORES BARES DA CIDADE!</p>
+        </strong>
         <p>Aqui você encontra os melhores drinks e petiscos!</p>
     </div>
 
@@ -49,19 +53,14 @@
                 </div>
             </a>
 
-            <a href="./seattle.html">
+            <a href="seattle">
                 <div class="item-grande">
                     <img src="assets/img/bar/SEATTLE.png" alt="Seattle" class="foto-item">
                     <p class="card-title">SEATLLE MUSIC BAR</p>
                     <p class="descricao">Se você ama cerveja, música, esporte e comida boa, seja muito bem-vindo a Seattle!</p>
                 </div>
-            </a>
-
-            
-            
+            </a>            
         </section>
-
-        
     </main>
 </body>
 </html>

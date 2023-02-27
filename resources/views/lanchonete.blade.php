@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="assets/img/lanchonete/Logo.png" alt="logo" class="logo"></a>
+        <a href="/"><img src="assets/img/lanchonete/Logo.png" alt="logo" class="logo"></a>
     </header>
 
     <div class="titulo">
@@ -49,7 +49,7 @@
                 </div>
             </a>
 
-            <a href="./general.html">
+            <a href="general">
                 <div class="item-grande">
                     <img src="assets/img/lanchonete/general.png" alt="general" class="foto-item">
                     <p class="card-title">GENERAL HAMBURGUERIA</p>
