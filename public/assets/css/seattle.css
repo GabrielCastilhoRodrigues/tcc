@@ -1,0 +1,1050 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #29523f;
+}
+
+nav {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: #242829;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 0 50px;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 8px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s easy;
+}
+
+nav ul li a:hover {
+    background: #444443;
+}
+
+nav .menu-btn i {
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.foto-responsiva img {
+    display: none;
+}
+
+.foto-bar {
+    width: 100%;
+}
+
+.foto-bar img {
+    width: 100%;
+    height: 100%;
+}
+
+.titulo h1 {
+    position: relative;
+    font-size: 50px;
+    top: 30px;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.container {
+    max-width: 100%;
+    height: 600px;
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.foto {
+    width: 180px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #353434;
+    margin: 10px;
+}
+
+.foto img {
+    width: 180px;
+    height: 80%;
+    border-radius: 10px 10px 0 0;
+}
+
+.foto h2 {
+    position: relative;
+    top: -30px;
+    margin-left: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.foto h3 {
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    bottom: 20px;
+    color: #F5F5F5;
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background-color: #071a06;
+}
+
+.main-content {
+    display: flex;
+    color: white;
+}
+
+.main-content,
+h2 {
+    color: white;
+}
+
+.main-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.box .content {
+    margin: 20px 0 0 0;
+    position: relative;
+}
+
+.box .content:after {
+    position: absolute;
+    content: '';
+    width: 15%;
+    height: 2px;
+    background: #f12020;
+    top: -10px;
+}
+
+.box .content:before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+    top: -10px;
+}
+
+.left .content .social {
+    margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+    padding: 0 2px;
+}
+
+.left .content .social a span {
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.left .content .social a span:hover {
+    background: #f12020;
+}
+
+.left .content p {
+    text-align: justify;
+}
+
+.center .content .fas {
+    font-size: 23px;
+    background: #1a1a1a;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.center .content .fas:hover {
+    background: #f12020;
+}
+
+.center .content .text {
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.center .content .phone {
+    margin: 10px 0;
+}
+
+.center .content .msg {
+    margin-top: 10px;
+}
+
+.right form input,
+.right form textarea {
+    width: 100%;
+    font-size: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+}
+
+.right form input {
+    height: 35px;
+}
+
+.right form input,
+textarea,
+.btn button {
+    border-radius: .8rem;
+}
+
+.right form input:focus,
+.right form textarea:focus {
+    outline-color: #3498db;
+}
+
+.right form .text {
+    font-size: 17px;
+    margin-bottom: 2px;
+    color: #dddcdc;
+}
+
+.right form .btn {
+    margin-top: 10px;
+}
+
+.right form .btn button {
+    height: 40px;
+    width: 100%;
+    background: #f12020;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.right form .btn button:hover {
+    background: #000;
+}
+
+.bottom .center {
+    padding: 5px;
+    font-size: 15px;
+    background: #151515;
+    text-align: center;
+}
+
+.bottom .center span {
+    color: #656565;
+}
+
+.bottom .center a {
+    color: #f12020;
+    text-decoration: none;
+}
+
+.bottom .center a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1259px) {
+    .container {
+        width: 100%;
+        height: 500px;
+        margin-bottom: 20px;
+    }
+    .foto {
+        width: 160px;
+        height: 180px;
+        border-radius: 20px;
+        margin: 15px;
+    }
+    .foto img {
+        width: 160px;
+        height: 75%;
+        border-radius: 10px 10px 0 0;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 30px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width:1140px) {
+    .container {
+        width: 100%;
+        height: 700px;
+    }
+    .foto {
+        width: 220px;
+        height: 175px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+    .foto img {
+        width: 220px;
+        height: 75%;
+        border-radius: 10px 10px 0 0;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 20px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width:1019px) {
+    .container {
+        width: 100%;
+        height: 650px;
+    }
+    .foto {
+        width: 200px;
+        height: 160px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+    .foto img {
+        width: 200px;
+        height: 75%;
+        border-radius: 10px 10px 0 0;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 20px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+}
+
+@media (max-width: 920px) {
+    nav .menu-btn i {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background-color: #003840;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s easy;
+    }
+    nav ul.open {
+        left: 0;
+    }
+    nav ul li {
+        width: 100%;
+        margin: 50px 0;
+    }
+    nav ul li a {
+        font-size: 23px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: none;
+        color: #444443;
+        ;
+    }
+}
+
+@media screen and (max-width:901px) {
+    .container {
+        width: 100%;
+        height: 660px;
+    }
+    .foto {
+        width: 200px;
+        height: 170px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+    .foto img {
+        width: 200px;
+        height: 75%;
+        border-radius: 10px 10px 0 0;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 20px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width:879px) {
+    .container {
+        width: 100%;
+        height: 850px;
+    }
+    .foto {
+        width: 200px;
+        height: 170px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+    .foto img {
+        width: 200px;
+        height: 75%;
+        border-radius: 10px 10px 0 0;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 20px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width:835px) {
+    .container {
+        width: 100%;
+        height: 820px;
+    }
+    .foto {
+        width: 220px;
+        height: 170px;
+        border-radius: 20px;
+        margin: 8px;
+    }
+    .foto img {
+        width: 220px;
+        height: 75%;
+        border-radius: 10px 10px 0 0;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 20px;
+        font-size: 40px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width:720px) {
+    nav {
+        padding: 0 50px 0 30px;
+    }
+    .container {
+        width: 100%;
+        height: 820px;
+    }
+    .foto {
+        width: 200px;
+        height: 170px;
+        border-radius: 20px;
+        margin: 6px;
+    }
+    .foto img {
+        width: 200px;
+        height: 75%;
+        border-radius: 10px 10px 0 0;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 20px;
+        font-size: 40px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width: 659px) {
+    .container {
+        width: 100%;
+        height: 800px;
+    }
+    .foto {
+        width: 200px;
+        height: 160px;
+        margin: 5px;
+    }
+    .foto img {
+        width: 200px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 20px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 15px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 645px) {
+    .container {
+        width: 100%;
+        height: 680px;
+    }
+    .foto {
+        width: 200px;
+        height: 150px;
+        margin: 5px;
+    }
+    .foto img {
+        width: 200px;
+        height: 75%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 15px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 629px) {
+    .container {
+        width: 100%;
+        height: 760px;
+    }
+    .foto {
+        width: 180px;
+        height: 160px;
+        margin: 5px;
+    }
+    .foto img {
+        width: 180px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        font-size: 35px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 15px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .foto-bar {
+        display: none;
+    }
+    .foto-responsiva img {
+        display: flex;
+        width: 100%;
+    }
+    .logo img {
+        width: 50px;
+        position: relative;
+        left: 10px;
+    }
+    .container {
+        width: 100%;
+        height: 660px;
+        position: relative;
+        bottom: 40px;
+    }
+    .foto {
+        width: 160px;
+        height: 145px;
+        margin: 7px;
+    }
+    .foto img {
+        width: 160px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        margin-bottom: 20px;
+        font-size: 25px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 521px) {
+    .container {
+        width: 100%;
+        height: 580px;
+    }
+    .foto {
+        width: 150px;
+        height: 130px;
+        margin: 5px;
+    }
+    .foto img {
+        width: 150px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 15px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    nav .logo {
+        font-size: 25px;
+    }
+    nav {
+        padding: 0 30px 0 30px;
+    }
+    .container {
+        width: 100%;
+        height: 600px;
+    }
+    .foto {
+        width: 138px;
+        height: 130px;
+        margin: 7px;
+    }
+    .foto img {
+        width: 138px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    nav .logo {
+        font-size: 25px;
+    }
+    .container {
+        width: 100%;
+        height: 950px;
+    }
+    .foto {
+        width: 190px;
+        height: 140px;
+        margin: 8px;
+    }
+    .foto img {
+        width: 190px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    nav .logo {
+        font-size: 25px;
+    }
+    .container {
+        width: 100%;
+        height: 920px;
+    }
+    .foto {
+        width: 180px;
+        height: 140px;
+        margin: 7px;
+    }
+    .foto img {
+        width: 180px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 387px) {
+    nav .logo {
+        font-size: 25px;
+    }
+    .container {
+        width: 100%;
+        height: 960px;
+    }
+    .foto {
+        width: 170px;
+        height: 145px;
+        margin: 6px;
+    }
+    .foto img {
+        width: 170px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 15px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 363px) {
+    nav .logo {
+        font-size: 25px;
+    }
+    .container {
+        width: 100%;
+        height: 860px;
+    }
+    .foto {
+        width: 160px;
+        height: 128px;
+        margin: 6px;
+    }
+    .foto img {
+        width: 160px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        position: relative;
+        left: 10px;
+        bottom: 18px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 343px) {
+    nav {
+        padding: 0 20px 0 20px;
+    }
+    nav .logo {
+        font-size: 25px;
+    }
+    .container {
+        width: 100%;
+        height: 860px;
+    }
+    .foto {
+        width: 130px;
+        height: 130px;
+        margin: 6px;
+    }
+    .foto img {
+        width: 130px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        font-size: 14px;
+        position: relative;
+        left: 10px;
+        bottom: 15px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 283px) {
+    nav .logo {
+        font-size: 25px;
+    }
+    .container {
+        width: 100%;
+        height: 860px;
+    }
+    .foto {
+        width: 120px;
+        height: 130px;
+        margin: 6px;
+    }
+    .foto img {
+        width: 120px;
+        height: 70%;
+    }
+    .titulo h1 {
+        position: relative;
+        top: 18px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .foto h3 {
+        font-size: 14px;
+        position: relative;
+        left: 10px;
+        bottom: 15px;
+    }
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+}
+
+.logo img {
+    width: 150px;
+    cursor: pointer;
+}
+
+.button a {
+    padding: 10px 8px;
+    border-radius: .4rem;
+    background-color: rgb(255, 246, 246);
+    color: black;
+    margin: 5px;
+    transition: ease-in-out;
+    transition: .4s;
+}
+
+.button a:hover {
+    background-color: rgb(224, 224, 224);
+}
