@@ -13,7 +13,6 @@ class CadastroController extends Controller
     }
 
     public function insereUsuario(Request $request){
-        //$usuario = new Usuario;
         $dataAtual = new DateTime;
 
         Usuario::create(
@@ -27,16 +26,6 @@ class CadastroController extends Controller
                 'dt_alteracao' => $dataAtual
             ]
         );
-
-        /*
-        $usuario->nome = $request->nome;
-        $usuario->dt_nascimento = $request->dt_nascimento;
-        $usuario->cpf = $request->cpf;
-        $usuario->email = $request->email;
-        $usuario->senha = $request->senha;
-        $usuario->dt_cadastro = $dataAtual;
-        $usuario->dt_alteracao = $dataAtual;
-        $usuario->save();*/
 
         return redirect()->route('cadastro.usuario');
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\BarController;
@@ -21,6 +22,10 @@ Route::get('/bar', [BarController::class, 'index']);
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro.usuario');
 Route::post('/cadastro', [CadastroController::class, 'insereUsuario'])->name('cadastro.insereUsuario');
 
+Route::get('/login', [LoginController::class, 'index'])->name('login.usuario');
+Route::post('/login', [LoginController::class, 'conectaUsuario'])->name('login.conectaUsuario');
+Route::post('/logout', [LoginController::class, 'logout'])->name('login.logoutUsuario');
+
 Route::get('/general', [GeneralController::class, 'index']);
 
 Route::get('/jangada', [JangadaController::class, 'index']);
@@ -36,3 +41,12 @@ Route::get('/restaurante', [RestauranteController::class, 'index']);
 Route::get('/seattle', [SeattleController::class, 'index']);
 
 Route::get('/test-conn', [testeController::class, 'teste']);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

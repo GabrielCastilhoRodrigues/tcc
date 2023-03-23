@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/assets/css/principal.css">
     <script type="text/javascript" src="/assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/e6a3d86f14.js" crossorigin="anonymous"></script>
-    <title>Projeto</title>
+    <title>Limeira QR</title>
 </head>
 
 <body>
@@ -25,8 +25,8 @@
         <h1 class="title">Aqui você encontra os melhores lugares!</h1>
 
         <div class="button" id="menu">
-            <a href="Cadastro">Cadastre-se</a>
-        </div>
+            <a href="cadastro">Cadastro</a> |
+            <a href="login">Login</a>
         </div>
     </section>
     <!--section-->

@@ -1,0 +1,110 @@
+body{
+	background-image: url("../img/cadastro/bg.png");
+	background-repeat: repeat;
+	background-size: 5%;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 20px;
+	margin: 0;
+}
+
+.title{
+	color:#ffa600;
+	font-size: 2.3em;
+	font-weight: bold;
+	text-align: center;
+}
+
+label{
+	margin: 2%;
+	margin-top: 5%;
+	display: flex;
+   	flex-direction: column;
+   	text-align: center;
+	color: #000000;
+	font-variant: bold;
+}
+
+textarea{
+	width: 65%;
+	height: 15%;
+	border-radius: 5px;
+	background-color: #eceeff;
+}
+
+textarea:hover{
+	border-radius: 0;
+	background-color: #dbdefd;
+}
+
+.campo{
+	margin: 2%;
+	margin-top: 5%;
+	display: flex;
+	width: 65%;
+	height: 25px;
+	border-radius: 5px;
+	background-color: #eceeff;
+	flex-direction: column;
+   	text-align: center;
+}
+
+.campo:hover{
+	border-radius: 0;
+	background-color: #dbdefd;
+}
+
+.button{
+    border-radius: .4rem;
+    background-color: #ffffff;
+    color: black;
+    margin: 5px;
+    transition: ease-in-out;
+    transition: .4s;
+}
+
+.button:hover{
+	padding: 10px 8px;
+    border-radius: .4rem;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 5px;
+}
+
+.button:active{
+	padding: 10px 8px;
+    border-radius: .4rem;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    background-color: white;
+}
+
+.logo img {
+    width: 150px;
+    cursor: pointer;
+}
+
+.button .section{
+	background-color: white;
+}
+
+#nome{
+	margin-top: 0;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+.form{
+    background-color: #ffffff;
+}

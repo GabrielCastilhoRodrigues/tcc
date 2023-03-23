@@ -9,11 +9,22 @@
 
 <body>
 	
-	<header>
-        <a href="/">
-            <img src="assets/img/bar/Logo.png" alt="logo" class="logo">
-        </a>
-    </header>
+	<!--section navbar-->
+    <section class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/img/principal/logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="icon" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars fa-2x"></i>
+        </div>
+        <h1 class="title">Aqui você encontra os melhores lugares!</h1>
+
+        <div class="button" id="menu">
+            <a href="cadastro">Cadastre-se</a>
+        </div>
+    </section>
 
 	<p class="title">Cadastro de Estabelecimento</p>
 	
@@ -44,7 +55,6 @@
 			<br>
 		</div>
 	</form>
-	<br><br>
 
 </body>
 </html>
