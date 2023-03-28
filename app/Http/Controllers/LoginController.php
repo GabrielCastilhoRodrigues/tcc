@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Auth;
-use Closure;
-use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -23,10 +22,11 @@ class LoginController extends Controller
                           ->first();
 
         if(@$usuario->id_usuario != null){
-            @session_start();
-
-            session()->flash('Login realizado com sucesso!');
-            session()->put('usuario', $usuario);
+            if($request->session()->has('usuario')){
+                $request->session()->remove('usuario');
+            }
+            
+            $request->session()->put('usuario', $usuario);
 
             $_SESSION['id_usuario'] = $usuario->id_usuario;
             $_SESSION['nome_usuario'] = $usuario->nome;
@@ -36,13 +36,21 @@ class LoginController extends Controller
                 return view('admin.principal');
             }
             else{
-                return view('principal');
+                Log::channel('main')->info('logado usuário '.$_SESSION['nome_usuario']);
+
+                return view('principal', 
+                            ['usuario' => $request->session()->get('usuario')['nome']]);
             }
         }
     }
 
     public function logout(Request $request, $guard = null){
         Auth::logout();
+
+        if($request->session()->has('usuario')){
+            $request->session()->remove('usuario');
+        }
+
         return view('acesso.login');
     }
 }

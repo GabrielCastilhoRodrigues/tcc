@@ -24,7 +24,7 @@ Route::post('/cadastro', [CadastroController::class, 'insereUsuario'])->name('ca
 
 Route::get('/login', [LoginController::class, 'index'])->name('login.usuario');
 Route::post('/login', [LoginController::class, 'conectaUsuario'])->name('login.conectaUsuario');
-Route::post('/logout', [LoginController::class, 'logout'])->name('login.logoutUsuario');
+Route::get('/logout', [LoginController::class, 'logout'])->name('login.logoutUsuario');
 
 Route::get('/general', [GeneralController::class, 'index']);
 

@@ -3,15 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PrincipalController extends Controller
 {
-    public function index(){
-        if(session()->has('usuario')){
-            echo 'logado';
-        }
-        else {
-            return view('principal');
-        }
+    public function index(Request $request){
+        return view('principal', ['usuario' => $request->session()->get('usuario')['nome']]);
     }
 }
