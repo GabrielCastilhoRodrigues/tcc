@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class SeattleController extends Controller
 {
-    public function index(){
-        return view('seattle');
+    public function index(Request $request){
+        return view('seattle', ['usuario' => isset($request->session()->get('usuario')['nome']) 
+                                                ? $request->session()->get('usuario')['nome'] 
+                                                : ""]);
     }
 }

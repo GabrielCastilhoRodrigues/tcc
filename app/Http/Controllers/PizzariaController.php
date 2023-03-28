@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class PizzariaController extends Controller
 {
-    public function index(){
-        return view('pizzaria');
+    public function index(Request $request){
+        return view('pizzaria', ['usuario' => isset($request->session()->get('usuario')['nome']) 
+                                                ? $request->session()->get('usuario')['nome'] 
+                                                : ""]);
     }
 }

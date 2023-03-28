@@ -26,9 +26,9 @@ header {
     gap: 8px 15px;
 }
 
-.logo {
-    height: 60px;
-
+.logo img {
+    width: 150px;
+    cursor: pointer;
 }
 
 .titulo {
@@ -84,4 +84,26 @@ main {
 
 .descricao {
     text-align: justify;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    background-color: #de0d0d;
+}
+
+.button a {
+    padding: 10px 8px;
+    border-radius: .4rem;
+    background-color: rgb(255, 246, 246);
+    color: black;
+    margin: 5px;
+    transition: ease-in-out;
+    transition: .4s;
+}
+
+.button a:hover {
+    background-color: rgb(224, 224, 224);
 }

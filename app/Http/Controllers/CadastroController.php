@@ -8,8 +8,10 @@ use App\Models\Usuario;
 
 class CadastroController extends Controller
 {
-    public function index(){
-        return view('cadastro');
+    public function index(Request $request){
+        return view('cadastro', ['usuario' => isset($request->session()->get('usuario')['nome']) 
+                                                ? $request->session()->get('usuario')['nome'] 
+                                                : ""]);
     }
 
     public function insereUsuario(Request $request){

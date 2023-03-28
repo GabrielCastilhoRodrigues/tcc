@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
-    public function index(){
-        return view('acesso.login');
+    public function index(Request $request){
+        return view('acesso.login', ['usuario' => isset($request->session()->get('usuario')['nome']) 
+                                                    ? $request->session()->get('usuario')['nome'] 
+                                                    : ""]);
     }
 
     public function conectaUsuario(Request $request){

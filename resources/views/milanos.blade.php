@@ -20,9 +20,17 @@
         
         <h1 class="title">Aqui você encontra os melhores lugares!</h1>
 
-        <div class="button" id="menu">
-            <a href="Cadastro">Cadastre-se</a>
-        </div>
+        @if($usuario == null && $usuario == '')
+            <div class="button" id="menu">
+                <a href="cadastro">Cadastro</a> |
+                <a href="login">Login</a>
+            </div>
+        @else
+            {{$usuario}}
+            <div class="button" id="menu">
+                <a href="logout" method="POST">Logout</a>
+            </div>
+        @endif
     </section>
 
     <nav>
