@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    font-variant: bold
+}
+
+body {
+    background-color: #fff;
+    color: #007bff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+.button a {
+    padding: 10px 8px;
+    border-radius: .4rem;
+    background-color: rgb(255, 246, 246);
+    color: black;
+    margin: 5px;
+    transition: ease-in-out;
+    transition: .4s;
+}
+
+.button a:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.logo img {
+    width: 150px;
+    cursor: pointer;
+}
+
+.icon {
+    display: none;
+}
+
+.logado{
+    display: flex;
+    flex-direction: row;
+}
+
+.usuario{
+    margin-right: 20px;
+}

@@ -27,10 +27,15 @@
                 <a href="login">Login</a>
             </div>
         @else
-            {{$usuario}}
-            <div class="button" id="menu">
-                <a href="logout" method="POST">Logout</a>
-            </div>
+			<div class="logado">
+				<div class="usuario">
+					{{$usuario}} 
+					<i class="fa-solid fa-user"></i>
+				</div>
+				<div class="button" id="menu">
+					<a href="logout" method="POST">Logout</a>
+				</div>
+			</div>
         @endif
     </section>
 

@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/principal.css">
+    <link rel="stylesheet" href="/assets/css/body.css">
     <script type="text/javascript" src="/assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/e6a3d86f14.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a97d3ea7a7.js" crossorigin="anonymous"></script>
     <title>Limeira QR</title>
 </head>
 
@@ -19,20 +20,23 @@
                 <img src="/assets/img/principal/logo.png" alt="Logo">
             </a>
         </div>
-        <div class="icon" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars fa-2x"></i>
-        </div>
+
         <h1 class="title">Aqui você encontra os melhores lugares!</h1>
 
         @if($usuario == null && $usuario == '')
             <div class="button" id="menu">
-                <a href="cadastro">Cadastro</a> |
+                <a href="cadastro">Cadastro</a>
                 <a href="login">Login</a>
             </div>
         @else
-            {{$usuario}}
-            <div class="button" id="menu">
-                <a href="logout" method="POST">Logout</a>
+            <div class="logado">
+                <div class="usuario">
+                    {{$usuario}} 
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="button" id="menu">
+                    <a href="logout" method="POST">Logout</a>
+                </div>
             </div>
         @endif
     </section>

@@ -53,6 +53,8 @@ class LoginController extends Controller
             $request->session()->remove('usuario');
         }
 
-        return view('acesso.login');
+        return view('acesso.login', ['usuario' => isset($request->session()->get('usuario')['nome']) 
+                                                    ? $request->session()->get('usuario')['nome'] 
+                                                    : ""]);
     }
 }
