@@ -80,7 +80,7 @@
 
         <div class="opcoes">
             <figure>
-                <a href="#">
+                <a href="seattle">
                     <img src="assets/img/bar/SEATTLE.png" alt="Seattle" class="foto-item">
                     <figcaption class="legenda">
                         Seattle Music Bar

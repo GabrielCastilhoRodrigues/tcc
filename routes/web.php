@@ -32,7 +32,7 @@ Route::get('/jangada', [JangadaController::class, 'index']);
 
 Route::get('/lanchonete', [LanchoneteController::class, 'index']);
 
-Route::get('/milanos', [MilanosController::class, 'index']);
+Route::get('/millanos', [MilanosController::class, 'index']);
 
 Route::get('/pizzaria', [PizzariaController::class, 'index']);
 

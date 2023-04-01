@@ -78,7 +78,7 @@
 
         <div class="opcoes">
             <figure>
-                <a href="#">
+                <a href="millanos">
                     <img src="assets/img/pizzaria/millanos.png" alt="Millano's" class="foto-item">
                     <figcaption class="legenda">
                         Millano's

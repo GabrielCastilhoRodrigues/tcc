@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/milanos.css">
     <script src="https://kit.fontawesome.com/e6a3d86f14.js" crossorigin="anonymous"></script>
-    <title>MIlanos</title>
+    <title>Milanos</title>
 </head>
 
 <body>
