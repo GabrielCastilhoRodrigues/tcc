@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/pizzaria.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/body.css">
+    <link rel="stylesheet" href="/assets/css/opcoes.css">   
     <title>Pizzaria</title>
 </head>
 <body>
@@ -15,9 +17,11 @@
             </a>
         </div>
 
+        <h1 class="title">Aqui você encontra os melhores lugares!</h1>
+
         @if($usuario == null && $usuario == '')
             <div class="button" id="menu">
-                <a href="cadastro">Cadastro</a> |
+                <a href="cadastro">Cadastro</a>
                 <a href="login">Login</a>
             </div>
         @else
@@ -38,44 +42,50 @@
         <p>Aqui você encontra pizza de vários tamanhos e sabores! </p>
     </div>
 
-    <main>
-        <section class="itens-principais">
-            <a href="#">
-                <div class="item-grande">
+    <section class="main">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/pizzaria/micheluccio.png" alt="Micheluccio" class="foto-item">
-                    <p class="card-title">MICHELUCCIO</p>
-                    <p class="descricao">Uma referência em sabor e qualidade, melhor rodízio de pizza.
-                     </p>
-                </div>
-            </a>
+                    <figcaption class="legenda">
+                        Micheluccio
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
 
-            <a href="#">
-                <div class="item-grande">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/pizzaria/ravelly.jpeg" alt="Ravelly" class="foto-item">
-                    <p class="card-title">RAVELLY</p>
-                    <p class="descricao">Diversas pizzas tradicionais e especiais, além de bebidas geladas, para retirar no balcão ou receber em casa. <br>
-                    </p>
-                </div>
-            </a>
+                    <figcaption class="legenda">
+                        Ravelly
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
 
-            <a href="#">
-                <div class="item-grande">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/pizzaria//mook.jpeg" alt="Moonk" class="foto-item">
-                    <p class="card-title">MOONK</p>
-                    <p class="descricao">Nosso diferencial é o formato quadrado com ingredientes de primeira e a nossa entrega que é super rápida!
-                    </p>
-                </div>
-            </a>
+                    <figcaption class="legenda">
+                        Moonk
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
 
-            <a href="milanos">
-                <div class="item-grande">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/pizzaria/millanos.png" alt="Millano's" class="foto-item">
-                    <p class="card-title">MILLANO'S</p>
-                    <p class="descricao">Cardápio variado com diversos tipos de pizzas, opções doces e borda recheada, sanduíches, clima casual.</p>
-                </div>
-            </a>
-            
-        </section>  
-    </main>
+                    <figcaption class="legenda">
+                        Millano's
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+    </section>  
 </body>
 </html>

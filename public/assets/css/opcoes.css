@@ -1,3 +1,11 @@
+
+.legenda {
+    font-size: 25px;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+}
+
 .main {
     display: flex;
     padding-top: 20px;
@@ -45,13 +53,6 @@ h2 {
 .opcoes a {
     text-decoration:none;
     color: #FFFFFF;
-}
-
-.legenda {
-    font-size: 25px;
-    position: relative;
-    bottom: 20px;
-    text-align: center;
 }
 
 @media screen and (max-width: 1359px) {

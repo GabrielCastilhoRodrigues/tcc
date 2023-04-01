@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/body.css">
+    <link rel="stylesheet" href="/assets/css/opcoes.css"> 
     <title>Bar</title>
 </head>
 <body>
@@ -15,9 +17,11 @@
             </a>
         </div>
 
+        <h1 class="title">Aqui você encontra os melhores lugares!</h1>
+
         @if($usuario == null && $usuario == '')
             <div class="button" id="menu">
-                <a href="cadastro">Cadastro</a> |
+                <a href="cadastro">Cadastro</a>
                 <a href="login">Login</a>
             </div>
         @else
@@ -40,46 +44,50 @@
         <p>Aqui você encontra os melhores drinks e petiscos!</p>
     </div>
 
-    <main>
-        <section class="itens-principais">
-            <a href="#">
-                <div class="item-grande">
+    <section class="main">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/bar//obarão.png" alt="obarao" class="foto-item">
-                    <p class="card-title">O BARÃO</p>
-                    <p class="descricao">Livre para viver tudo aquilo de melhor que se tem a oferecer!
-                        O Barão Music Bar traz um espírito de liberdade e curtição, em um ambiente incrível, com boa música, bebidas e uma ótima experiência gastronômica!</p>
-                </div>
-            </a>
+                    <figcaption class="legenda">
+                        O Barão
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
 
-            <a href="#">
-                <div class="item-grande">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/bar/cascata.png" alt="cascata" class="foto-item">
-                    <p class="card-title">CASCATA DO VINHO</p>
-                    <p class="descricao">Ambiente familiar, qualidade e preços incriveis.<br>
-                        Almoço, Porções, Drinks, Sucos e Chopp etc.<br>
-                        Happy Hour | a partir das 17h.<br>
-                    </p>
-                </div>
-            </a>
+                    <figcaption class="legenda">
+                        Cascata do Vinho
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
 
-            <a href="#">
-                <div class="item-grande">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/bar/pirata.jpeg" alt="pirata" class="foto-item">
-                    <p class="card-title">O PIRATA</p>
-                    <p class="descricao">Temos uma das melhores estruturas de Limeira e região, aqui a cerveja está sempre gelada, o drink no ponto e a porção saborosa e muito bem servida!<br>
-                        Sem falar nas maravilhosas pizzas!<br>
-                        Vem pro pirata!</p>
-                </div>
-            </a>
+                    <figcaption class="legenda">
+                        O Pirata
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
 
-            <a href="seattle">
-                <div class="item-grande">
+        <div class="opcoes">
+            <figure>
+                <a href="#">
                     <img src="assets/img/bar/SEATTLE.png" alt="Seattle" class="foto-item">
-                    <p class="card-title">SEATLLE MUSIC BAR</p>
-                    <p class="descricao">Se você ama cerveja, música, esporte e comida boa, seja muito bem-vindo a Seattle!</p>
-                </div>
-            </a>            
-        </section>
-    </main>
+                    <figcaption class="legenda">
+                        Seattle Music Bar
+                    </figcaption>
+                </a>
+            </figure>
+        </div>       
+    </section>
 </body>
 </html>

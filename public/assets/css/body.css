@@ -43,8 +43,14 @@ h1 {
     color: #fff;
 }
 
+.logo{
+    display: flex;
+    flex-direction: row;
+    margin: 1%
+}
+
 .logo img {
-    width: 150px;
+    width: 90px;
     cursor: pointer;
 }
 
