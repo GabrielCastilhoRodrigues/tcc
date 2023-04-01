@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/seattle.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/body.css">
+    <link rel="stylesheet" href="/assets/css/opcoes.css">
     <script src="https://kit.fontawesome.com/e6a3d86f14.js" crossorigin="anonymous"></script>
     <title>Seattle Bar</title>
 </head>
@@ -22,7 +24,7 @@
 
         @if($usuario == null && $usuario == '')
             <div class="button" id="menu">
-                <a href="cadastro">Cadastro</a> |
+                <a href="cadastro">Cadastro</a>
                 <a href="login">Login</a>
             </div>
         @else
@@ -71,7 +73,7 @@
         <!--container teste-->
         <div class="foto">
             <img src="assets/img/Seattle/bud.jpg" alt="">
-            <h2>15,00</h2>
+            <h2>15,00</h2>  
             <h3>Budweiser</h3>
         </div>
 
