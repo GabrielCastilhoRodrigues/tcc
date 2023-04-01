@@ -34,6 +34,13 @@
     </section>
 
     <div class="cadastro">
+        @if (session()->has('error'))
+        <div class="loginError">
+            <strong>{{session('error')}}</strong>
+        </div>
+            
+        @endif
+
         <form method="POST" action="{{ route('login.conectaUsuario') }}">
             @csrf
 
@@ -43,7 +50,10 @@
             <label>Senha</label>
             <input class="campo" type="password" name="senha" placeholder="Digite sua senha">
 
-            <input class="confirma" type="submit" value="login">
+            <div class="logar">
+                <input class="confirma" type="submit" value="Login">
+                <a href="esqueceu-senha" class="forgot">Esqueceu sua senha?</a>
+            </div>
         </form>
     </div>
     

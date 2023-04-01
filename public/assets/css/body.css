@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     text-decoration: none;
-    font-variant: bold
+    font-variant: bold;
 }
 
 body {
@@ -12,9 +12,8 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
     background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 h1 {
@@ -32,7 +31,7 @@ h1 {
 }
 
 .button a:hover {
-    background-color: rgb(224, 224, 224);
+    background-color: #A9A9A9;
 }
 
 .navbar {

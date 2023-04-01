@@ -16,6 +16,13 @@ class LoginController extends Controller
     }
 
     public function conectaUsuario(Request $request){
+        if($request->session()->has('usuario')){
+            $request->session()->remove('usuario');
+        }
+        else if($request->session()->has('error')){
+            $request->session()->remove('error');
+        }
+
         $email = $request->email;
         $senha = $request->senha;
 
@@ -23,11 +30,7 @@ class LoginController extends Controller
                           ->where('senha', '=', $senha)
                           ->first();
 
-        if(@$usuario->id_usuario != null){
-            if($request->session()->has('usuario')){
-                $request->session()->remove('usuario');
-            }
-            
+        if(@$usuario->id_usuario != null){            
             $request->session()->put('usuario', $usuario);
 
             $_SESSION['id_usuario'] = $usuario->id_usuario;
@@ -43,6 +46,11 @@ class LoginController extends Controller
                 return view('principal', 
                             ['usuario' => $request->session()->get('usuario')['nome']]);
             }
+        }
+        else{
+            session()->flash('error', 'Login ou senha inválidos');
+
+            return $this->index($request);
         }
     }
 

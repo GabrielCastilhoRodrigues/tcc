@@ -1,7 +1,7 @@
 label{
 	margin: 2%;
    	text-align: center;
-	color: #000000;
+	color: #ffffff;
 }
 
 .campo{
@@ -18,8 +18,19 @@ label{
 .confirma{
 	margin: 0 auto;
 	margin-top: 5%;
-	margin-bottom: 5%;
 	width: 25%;
+	padding: 8px 6px;
+    border-radius: .4rem;
+    background-color: rgb(255, 246, 246);
+    color: black;
+    transition: ease-in-out;
+    transition: .4s;
+	cursor: pointer;
+}
+
+.confirma:hover{
+	background-color: #A9A9A9;
+	font-style: bold;
 }
 
 .campo:hover{
@@ -48,7 +59,7 @@ form{
     background-color: #007bff;
 	width: 25%;
 	height: 35%;
-	margin-top: 5%;
+	margin-top: 2%;
 	border-radius: 5px;
 	display: flex;
    	flex-direction: column;
@@ -60,4 +71,33 @@ form{
 	align-items: center;
 	display: flex;
    	flex-direction: column;
+}
+
+.logar{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+   	flex-direction: column;
+}
+
+.forgot{
+    color: white;
+    margin: 4%;
+	transition: ease-in-out;
+    transition: .4s;
+	padding: 8px 6px;
+	border-radius: 10px;
+}
+
+.forgot:hover{
+	background-color: white;
+	color: #007bff;
+}
+
+.loginError{
+    color: #fff;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 2%;
+    padding: 10px 20px;
 }
