@@ -31,6 +31,7 @@ class Usuario extends Model
         'senha',
         'dt_cadastro',
         'dt_alteracao',
+        'nivel',
     ];
 
     /**
@@ -55,5 +56,6 @@ class Usuario extends Model
         'dt_cadastro' => 'datetime',
         'dt_alteracao' => 'datetime',
         'dt_nascimento' => 'date',
+        'nivel' => 'int',
     ];
 }

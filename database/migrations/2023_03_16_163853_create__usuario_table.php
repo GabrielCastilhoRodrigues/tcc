@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('senha');
             $table->datetime('dt_cadastro');
             $table->datetime('dt_alteracao');
+            $table->int('nivel');
         });
     }
 

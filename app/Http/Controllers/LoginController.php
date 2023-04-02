@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
@@ -27,10 +28,9 @@ class LoginController extends Controller
         $senha = $request->senha;
 
         $usuario = Usuario::where('email', '=', $email)
-                          ->where('senha', '=', $senha)
                           ->first();
 
-        if(@$usuario->id_usuario != null){            
+        if((@$usuario->id_usuario != null) && (Hash::check($request->senha, $usuario->senha))){            
             $request->session()->put('usuario', $usuario);
 
             $_SESSION['id_usuario'] = $usuario->id_usuario;
@@ -48,6 +48,8 @@ class LoginController extends Controller
             }
         }
         else{
+            Log::channel('main')->info('erro de login. Email: '.$email. ' Senha: '. $senha.
+                                       Hash::check($request->senha, $usuario->senha));
             session()->flash('error', 'Login ou senha inválidos');
 
             return $this->index($request);

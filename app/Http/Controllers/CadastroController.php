@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use Illuminate\Support\Facades\Hash;
 
 class CadastroController extends Controller
 {
@@ -23,9 +24,10 @@ class CadastroController extends Controller
                 'dt_nascimento' => $request->dt_nascimento,
                 'cpf' => $request->cpf,
                 'email' => $request->email,
-                'senha' => $request->senha,
+                'senha' => Hash::make($request->senha),
                 'dt_cadastro' => $dataAtual,
-                'dt_alteracao' => $dataAtual
+                'dt_alteracao' => $dataAtual,
+                'nivel' => 1
             ]
         );
 
