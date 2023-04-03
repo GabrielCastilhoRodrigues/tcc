@@ -20,15 +20,22 @@
 
         <h1 class="title">Aqui você encontra os melhores lugares!</h1>
 
-        @if($usuario == null && $usuario == '')
+        @if(!session()->has('usuario'))
             <div class="button" id="menu">
                 <a href="cadastro">Cadastro</a>
                 <a href="login">Login</a>
             </div>
         @else
-            {{$usuario}} <i class="fa-solid fa-user"></i>
-            <div class="button" id="menu">
-                <a href="logout" method="POST">Logout</a>
+            <div class="logado">
+                <div class="usuario">
+                    {{
+                        session()->get('usuario')['nome']
+                    }} 
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="button" id="menu">
+                    <a href="logout" method="POST">Logout</a>
+                </div>
             </div>
         @endif
     </section>

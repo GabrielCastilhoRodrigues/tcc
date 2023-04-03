@@ -10,9 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class CadastroController extends Controller
 {
     public function index(Request $request){
-        return view('cadastro', ['usuario' => isset($request->session()->get('usuario')['nome']) 
-                                                ? $request->session()->get('usuario')['nome'] 
-                                                : ""]);
+        return view('cadastro');
     }
 
     public function insereUsuario(Request $request){

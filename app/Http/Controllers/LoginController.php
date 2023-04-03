@@ -11,9 +11,7 @@ use Illuminate\Support\Facades\Log;
 class LoginController extends Controller
 {
     public function index(Request $request){
-        return view('acesso.login', ['usuario' => isset($request->session()->get('usuario')['nome']) 
-                                                    ? $request->session()->get('usuario')['nome'] 
-                                                    : ""]);
+        return view('acesso.login');
     }
 
     public function conectaUsuario(Request $request){
@@ -43,8 +41,7 @@ class LoginController extends Controller
             else{
                 Log::channel('main')->info('logado usuário '.$_SESSION['nome_usuario']);
 
-                return view('principal', 
-                            ['usuario' => $request->session()->get('usuario')['nome']]);
+                return view('principal');
             }
         }
         else{
@@ -63,8 +60,6 @@ class LoginController extends Controller
             $request->session()->remove('usuario');
         }
 
-        return view('acesso.login', ['usuario' => isset($request->session()->get('usuario')['nome']) 
-                                                    ? $request->session()->get('usuario')['nome'] 
-                                                    : ""]);
+        return view('acesso.login');
     }
 }

@@ -23,7 +23,7 @@
 
         <h1 class="title">Aqui você encontra os melhores lugares!</h1>
 
-        @if($usuario == null && $usuario == '')
+        @if(!session()->has('usuario'))
             <div class="button" id="menu">
                 <a href="cadastro">Cadastro</a>
                 <a href="login">Login</a>
@@ -31,7 +31,9 @@
         @else
             <div class="logado">
                 <div class="usuario">
-                    {{$usuario}} 
+                    {{
+                        session()->get('usuario')['nome']
+                    }} 
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="button" id="menu">

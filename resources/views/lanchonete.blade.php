@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/lanchonete.css">
     <link rel="stylesheet" type="text/css" href="assets/css/body.css">
     <link rel="stylesheet" href="/assets/css/opcoes.css">
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+	<script src="https://kit.fontawesome.com/a97d3ea7a7.js" crossorigin="anonymous"></script>
     <title>Lanchonete</title>
 </head>
 <body>
@@ -19,7 +21,7 @@
 
         <h1 class="title">Aqui você encontra os melhores lugares!</h1>
 
-        @if($usuario == null && $usuario == '')
+        @if(!session()->has('usuario'))
             <div class="button" id="menu">
                 <a href="cadastro">Cadastro</a>
                 <a href="login">Login</a>
@@ -27,7 +29,9 @@
         @else
             <div class="logado">
                 <div class="usuario">
-                    {{$usuario}} 
+                    {{
+                        session()->get('usuario')['nome']
+                    }} 
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="button" id="menu">
