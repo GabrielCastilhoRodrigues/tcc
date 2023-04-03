@@ -37,6 +37,7 @@ class CadastroController extends Controller
         $dataAtual = new DateTime;
 
         $dados['dt_alteracao'] = $dataAtual;
+        $dados['senha'] = Hash::make($request->senha);
 
         $usuario = Usuario::findOrFail(session()->get('usuario')['id_usuario']);
         $salvou = $usuario->update($dados);
@@ -44,6 +45,7 @@ class CadastroController extends Controller
         if ($salvou){
             $request->session()->remove('error');
             $request->session()->put('usuario', $usuario);
+            $request->session()->flash('ok-2', 'Dados alterados com sucesso!');
         }
         else{
             $request->session()->flash('error-3', 'Não foi possível realizar as alterações. Favor contatar o suporte');

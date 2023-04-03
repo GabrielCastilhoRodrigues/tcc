@@ -86,9 +86,21 @@ h2 {
 
 
 .error{
-    color: #fff;
     background-color: red;
-    border-radius: 5px;
+}
+
+.ok{
+    background-color: green;
+    border-radius: 15px;
+    width: 15%;
+}
+
+.retorno{
+    color: #fff;
     margin-top: 2%;
     padding: 10px 20px;
+	align-items: center;
+	text-align: center;
+    display: flex;
+    flex-direction: column;
 }
