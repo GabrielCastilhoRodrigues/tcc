@@ -31,15 +31,11 @@ class LoginController extends Controller
         if((@$usuario->id_usuario != null) && (Hash::check($request->senha, $usuario->senha))){            
             $request->session()->put('usuario', $usuario);
 
-            $_SESSION['id_usuario'] = $usuario->id_usuario;
-            $_SESSION['nome_usuario'] = $usuario->nome;
-            $_SESSION['email_usuario'] = $usuario->email;
-
-            if($_SESSION['email_usuario'] == 'adminOficial@email.com'){
+            if($usuario->email == 'adminOficial@email.com'){
                 return view('admin.principal');
             }
             else{
-                Log::channel('main')->info('logado usuário '.$_SESSION['nome_usuario']);
+                Log::channel('main')->info('logado usuário '.$usuario->nome);
 
                 return view('principal');
             }
@@ -47,7 +43,7 @@ class LoginController extends Controller
         else{
             Log::channel('main')->info('erro de login. Email: '.$email. ' Senha: '. $senha.
                                        Hash::check($request->senha, $usuario->senha));
-            session()->flash('error', 'Login ou senha inválidos');
+            session()->flash('error-1', 'Login ou senha inválidos');
 
             return $this->index($request);
         }

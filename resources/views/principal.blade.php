@@ -31,10 +31,12 @@
         @else
             <div class="logado">
                 <div class="usuario">
-                    {{
-                        session()->get('usuario')['nome']
-                    }} 
-                    <i class="fa-solid fa-user"></i>
+                    <a href="dados-usuario" class="dadosUsuario">
+                        {{
+                            session()->get('usuario')['nome']
+                        }} 
+                        <i class="fa-solid fa-user"></i>
+                    </a>
                 </div>
                 <div class="button" id="menu">
                     <a href="logout" method="POST">Logout</a>

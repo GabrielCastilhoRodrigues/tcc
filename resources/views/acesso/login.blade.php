@@ -41,11 +41,14 @@
     </section>
 
     <div class="cadastro">
-        @if (session()->has('error'))
-        <div class="loginError">
-            <strong>{{session('error')}}</strong>
-        </div>
-            
+        @if (session()->has('error-1'))
+            <div class="error">
+                <strong>{{session('error-1')}}</strong>
+            </div>
+        @elseif(session()->has('error-2'))
+            <div class="error">
+                <strong>{{session('error-2')}}</strong>
+            </div>
         @endif
 
         <form method="POST" action="{{ route('login.conectaUsuario') }}">

@@ -18,6 +18,9 @@ class Usuario extends Model
     //Define que não terá o campo padrão de update e create do laravel
     public $timestamps = false;
 
+    //Define o nome da chave primária da tabela
+    public $primaryKey = 'id_usuario';
+
     /**
      * The attributes that are mass assignable.
      *

@@ -31,4 +31,24 @@ class CadastroController extends Controller
 
         return redirect()->route('cadastro.usuario');
     }
+
+    public function atualizaUsuario(Request $request){
+        $dados = $request->all();
+        $dataAtual = new DateTime;
+
+        $dados['dt_alteracao'] = $dataAtual;
+
+        $usuario = Usuario::findOrFail(session()->get('usuario')['id_usuario']);
+        $salvou = $usuario->update($dados);
+
+        if ($salvou){
+            $request->session()->remove('error');
+            $request->session()->put('usuario', $usuario);
+        }
+        else{
+            $request->session()->flash('error-3', 'Não foi possível realizar as alterações. Favor contatar o suporte');
+        }
+
+        return view('acesso.dados.usuario');
+    }
 }

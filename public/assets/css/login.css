@@ -93,11 +93,3 @@ form{
 	background-color: white;
 	color: #007bff;
 }
-
-.loginError{
-    color: #fff;
-    background-color: red;
-    border-radius: 5px;
-    margin-top: 2%;
-    padding: 10px 20px;
-}
