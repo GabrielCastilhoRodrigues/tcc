@@ -14,43 +14,84 @@ class CadastroController extends Controller
     }
 
     public function insereUsuario(Request $request){
+        $this->limpaMensagens($request);
+
         $dataAtual = new DateTime;
 
-        Usuario::create(
-            [   
-                'nome' => $request->nome,
-                'dt_nascimento' => $request->dt_nascimento,
-                'cpf' => $request->cpf,
-                'email' => $request->email,
-                'senha' => Hash::make($request->senha),
-                'dt_cadastro' => $dataAtual,
-                'dt_alteracao' => $dataAtual,
-                'nivel' => 1
-            ]
-        );
+        if($request->senha != $request->confirmaSenha){
+            $request->session()->flash('error-4', 'As senhas devem ser compatíveis');
+        }
+        else{
+            Usuario::create(
+                [   
+                    'nome' => $request->nome,
+                    'dt_nascimento' => $request->dt_nascimento,
+                    'cpf' => $request->cpf,
+                    'email' => $request->email,
+                    'senha' => Hash::make($request->senha),
+                    'dt_cadastro' => $dataAtual,
+                    'dt_alteracao' => $dataAtual,
+                    'nivel' => 1
+                ]
+            );
 
-        return redirect()->route('cadastro.usuario');
+            $request->session()->flash('ok-3', 'Dados inseridos com sucesso!');
+        }
+
+        return view('cadastro');
     }
 
     public function atualizaUsuario(Request $request){
-        $dados = $request->all();
-        $dataAtual = new DateTime;
-
-        $dados['dt_alteracao'] = $dataAtual;
-        $dados['senha'] = Hash::make($request->senha);
-
-        $usuario = Usuario::findOrFail(session()->get('usuario')['id_usuario']);
-        $salvou = $usuario->update($dados);
-
-        if ($salvou){
-            $request->session()->remove('error');
-            $request->session()->put('usuario', $usuario);
-            $request->session()->flash('ok-2', 'Dados alterados com sucesso!');
+        $this->limpaMensagens($request);
+        
+        if($request->senha != $request->confirmaSenha){
+            $request->session()->flash('error-4', 'As senhas devem ser compatíveis');
         }
         else{
-            $request->session()->flash('error-3', 'Não foi possível realizar as alterações. Favor contatar o suporte');
+            $dados = $request->except('confirmaSenha');
+            $dataAtual = new DateTime;
+
+            $dados['dt_alteracao'] = $dataAtual;
+            $dados['senha'] = Hash::make($request->senha);
+
+            $usuario = Usuario::findOrFail(session()->get('usuario')['id_usuario']);
+            $salvou = $usuario->update($dados);
+
+            if ($salvou){
+                $request->session()->remove('error');
+                $request->session()->put('usuario', $usuario);
+                $request->session()->flash('ok-2', 'Dados alterados com sucesso!');
+            }
+            else{
+                $request->session()->flash('error-3', 'Não foi possível realizar as alterações. Favor contatar o suporte');
+            }
         }
 
         return view('acesso.dados.usuario');
+    }
+
+    public function validaSenha(Request $request){
+        $request->validate([
+            'senha' => ['required'],
+            'confirmaSenha' => ['required|same:senha']
+        ]);
+    }
+
+    public function limpaMensagens(Request $request){
+        if($request->session()->has('error-3')){
+            $request->session()->remove('error-3');
+        }
+
+        if($request->session()->has('error-4')){
+            $request->session()->remove('error-4');
+        }
+
+        if($request->session()->has('ok-2')){
+            $request->session()->remove('ok-2');
+        }
+
+        if($request->session()->has('ok-3')){
+            $request->session()->remove('ok-3');
+        }
     }
 }

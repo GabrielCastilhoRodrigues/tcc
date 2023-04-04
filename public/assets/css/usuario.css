@@ -7,3 +7,74 @@ h3{
 h4{
     text-align: center;
 }
+
+.cadastro{
+	background-color: #007bff;
+	border-radius: 5px;
+	margin: 20%;
+	margin-top: 2%;
+	padding-top: 2%;
+	align-items: center;
+	text-align: center;
+}
+
+label{
+	margin: 2%;
+	margin-top: 5%;
+	display: flex;
+   	flex-direction: column;
+   	text-align: center;
+	color: #ffffff;
+	font-variant: bold;
+	font-size: 115%;
+}
+
+textarea{
+	width: 65%;
+	height: 15%;
+	border-radius: 5px;
+	background-color: #eceeff;
+}
+
+textarea:hover{
+	border-radius: 0;
+	background-color: #dbdefd;
+}
+
+.campo{
+	width: 65%;
+	height: 25px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #eceeff;
+}
+
+.campo:hover{
+	border-radius: 0;
+	background-color: #dbdefd;
+}
+
+#nome{
+	margin-top: 0;
+}
+
+h1 {
+	margin: 2%;
+	align-items: center;
+	text-align: center;
+}
+
+.acaoForm{
+	cursor: pointer;
+    border-radius: .4rem;
+    background-color: rgb(255, 246, 246);
+    color: black;
+    margin: 15px;
+	padding: 10px 20px;
+    transition: ease-in-out;
+    transition: .4s;
+}
+
+.acaoForm:hover{
+	background-color: #A9A9A9;
+}

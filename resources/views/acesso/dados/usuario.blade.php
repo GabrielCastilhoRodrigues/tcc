@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/body.css">
-    <link rel="stylesheet" href="/assets/css/cadastro.css">
     <link rel="stylesheet" href="/assets/css/usuario.css">
     <script type="text/javascript" src="/assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/a97d3ea7a7.js" crossorigin="anonymous"></script>
@@ -50,18 +49,26 @@
 
     <h3 class="subtitulo">Bem vindo "{{session()->get('usuario')['nome']}}"</h3>
     <h4>Segue abaixo seus dados cadastrais</h4>
-
-    <div class="retorno">
-        @if (session()->has('error-3'))
+ 
+    @if (session()->has('error-3'))
+        <div class="retorno">
             <div class="error">
                 <strong>{{session('error-3')}}</strong>
             </div>
-        @elseif(session()->has('ok-2'))
+        </div>
+    @elseif(session()->has('error-4'))
+        <div class="retorno">
+            <div class="error">
+                <strong>{{session('error-4')}}</strong>
+            </div>
+        </div>
+    @elseif(session()->has('ok-2'))
+        <div class="retorno">
             <div class="ok">
                 <strong>{{session('ok-2')}}</strong>
             </div>
-        @endif
-    </div>
+        </div>
+    @endif
 
     <div class="cadastro">
         <form action="{{ route('cadastro.atualizaUsuario') }}" method="POST">
@@ -80,6 +87,9 @@
 
                 <label for="senha">Senha:</label>
                 <input class="campo" type="password" name="senha" placeholder="Digite sua senha"size="25" required>
+
+                <label for="confirmaSenha">Confirme sua senha</label>
+			<input class="campo" type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Digite sua senha" size="25" required>
 
                 <br><br>
                 <input class="acaoForm" type="submit" name="Salvar" value="Salvar">

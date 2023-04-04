@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/cadastro.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/body.css">
 	<script type="text/javascript" src="/assets/js/script.js"></script>
+	<script type="text/javascript" src="/assets/js/validacoes.js"></script>
 	<script src="https://kit.fontawesome.com/a97d3ea7a7.js" crossorigin="anonymous"></script>
 	<title>Cadastro</title>
 </head>
@@ -43,6 +44,20 @@
     </section>
 
 	<h1>Cadastro de Usuário</h1>
+
+	@if (session()->has('error-4'))
+		<div class="retorno">
+            <div class="error">
+                <strong>{{session('error-4')}}</strong>
+            </div>
+		</div>
+    @elseif(session()->has('ok-3'))
+		<div class="retorno">
+			<div class="ok">
+                <strong>{{session('ok-3')}}</strong>
+            </div>
+		</div>
+    @endif
 	
 	<form action="{{ route('cadastro.insereUsuario') }}" method="POST">
 		@csrf
@@ -57,14 +72,17 @@
 			<label for="cpf">CPF</label>
 			<input class="campo" type="text" name="cpf" placeholder="999.999.999-99">
 									
-			<label for="email">E-mail:</label>
+			<label for="email">E-mail</label>
 			<input class="campo" type="email" name="email" placeholder="Digite seu E-mail" size="50">
 
-			<label for="senha">Senha:</label>
-			<input class="campo" type="password" name="senha" placeholder="Digite sua senha"size="25">
+			<label for="senha">Senha</label>
+			<input class="campo" type="password" name="senha" id="senha" placeholder="Digite sua senha" size="25">
+
+			<label for="confirmaSenha">Confirme sua senha</label>
+			<input class="campo" type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Digite sua senha" size="25" required>
 
 			<br><br>
-			<input class="acaoForm" type="submit" name="Salvar" value="Salvar">
+			<input class="acaoForm" type="submit" name="Salvar" value="Salvar" id="salvar">
 			<input class="acaoForm" type="reset" name="Apagar" value="Apagar">
 			<br><br>
 		</div>

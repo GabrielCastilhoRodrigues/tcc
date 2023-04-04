@@ -15,12 +15,7 @@ class LoginController extends Controller
     }
 
     public function conectaUsuario(Request $request){
-        if($request->session()->has('usuario')){
-            $request->session()->remove('usuario');
-        }
-        else if($request->session()->has('error')){
-            $request->session()->remove('error');
-        }
+        $this->limpaMensagens($request);
 
         $email = $request->email;
         $senha = $request->senha;
@@ -43,6 +38,7 @@ class LoginController extends Controller
         else{
             Log::channel('main')->info('erro de login. Email: '.$email. ' Senha: '. $senha.
                                        Hash::check($request->senha, $usuario->senha));
+                                       
             session()->flash('error-1', 'Login ou senha inválidos');
 
             return $this->index($request);
@@ -50,12 +46,22 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request, $guard = null){
-        Auth::logout();
+        if($request->session()->has('usuario')){
+            Auth::logout();
 
+            $this->limpaMensagens($request);
+        }
+        
+        return view('acesso.login');
+    }
+
+    public function limpaMensagens(Request $request){
         if($request->session()->has('usuario')){
             $request->session()->remove('usuario');
         }
-
-        return view('acesso.login');
+        
+        if($request->session()->has('error-1')){
+            $request->session()->remove('error-1');
+        }
     }
 }
