@@ -92,7 +92,7 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="excluir">Excluir</button>
+                                    <button type="submit" class="excluir" onclick="return confirm('Deseja excluir o usuário?')">Excluir</button>
                                 </form>
                                 <a class="editar" href="#">Editar</a>
                             </td>
