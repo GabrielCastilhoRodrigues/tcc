@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\UsuarioController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
@@ -43,3 +44,7 @@ Route::get('/restaurante', [RestauranteController::class, 'index']);
 Route::get('/seattle', [SeattleController::class, 'index']);
 
 Route::get('/dados-usuario', [UsuarioController::class, 'index']);
+
+Route::delete('/deleta-usuario/{id_usuario}', [AdminController::class, 'deletaUsuario']);
+Route::get('/principal-admin', [AdminController::class, 'index'])->name('admin.principal');
+Route::get('/lista-usuarios', [AdminController::class, 'listagemUsuario']);

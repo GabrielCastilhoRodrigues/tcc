@@ -25,13 +25,12 @@ class LoginController extends Controller
 
         if((@$usuario->id_usuario != null) && (Hash::check($request->senha, $usuario->senha))){            
             $request->session()->put('usuario', $usuario);
+            Log::channel('main')->info('logado usuário '.$usuario->nome);
 
-            if($usuario->email == 'adminOficial@email.com'){
-                return view('admin.principal');
+            if($usuario->nivel == 2){
+                return redirect('/principal-admin');
             }
             else{
-                Log::channel('main')->info('logado usuário '.$usuario->nome);
-
                 return view('principal');
             }
         }

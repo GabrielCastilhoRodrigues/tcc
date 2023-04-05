@@ -51,10 +51,10 @@
                 <strong>{{session('error-4')}}</strong>
             </div>
 		</div>
-    @elseif(session()->has('ok-3'))
+    @elseif(session()->has('ok-1'))
 		<div class="retorno">
 			<div class="ok">
-                <strong>{{session('ok-3')}}</strong>
+                <strong>{{session('ok-1')}}</strong>
             </div>
 		</div>
     @endif

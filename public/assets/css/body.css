@@ -1,9 +1,10 @@
 * {
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
-    margin: 0;
+    margin: 0px;
     text-decoration: none;
     font-variant: bold;
+    font-family: 'Kanit', sans-serif;
 }
 
 body {
@@ -16,8 +17,14 @@ body {
     min-height: 100vh;
 }
 
+p{
+    color: black;
+}
+
 h1 {
-    font-size: 35px;
+	margin: 2%;
+	align-items: center;
+	text-align: center;
 }
 
 h2 {
@@ -75,15 +82,14 @@ h2 {
 
 .dadosUsuario{
     color: #fff;
+    padding: 10px;
 }
 
 .dadosUsuario:hover{
     background-color: #fff;
     color: #007bff;
     border-radius: 10px;
-    padding: 10px;
 }
-
 
 .error{
     background-color: red;
@@ -105,4 +111,109 @@ h2 {
 	text-align: center;
     display: flex;
     flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar-lateral{
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+    background-color: #fff;
+    margin-left: 0px;
+    min-width: 220px;
+    max-width: 220px;
+}
+
+.conteudo-navbar{
+    overflow-y: auto;
+    width: 100%;
+}
+
+.item-navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px;
+    border-bottom: medium solid #D3D3D3;
+}
+
+.item-navbar:hover{
+    background-color: #D3D3D3;
+}
+
+.item-navbar::after{
+    content: '>';
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: row;
+}
+
+.conteudo-admin {
+    align-items: center;
+	text-align: center;
+    width: 100%;
+}
+
+.lista-usuarios{
+    width: 95%;
+    margin: 2%;
+}
+
+.usuario{
+    background-color: #007bff;
+    margin-bottom: 2%;
+    color: white;
+}
+
+.editar:hover, .excluir:hover{
+    cursor: pointer;
+}
+
+.editar, .excluir{
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    width: 40%;
+    border: medium solid black;
+    transition: .4;
+}
+
+.editar{
+    background-color: #D3D3D3;
+}
+
+.editar:hover{
+    background-color: #A9A9A9;
+}
+
+.excluir{
+    background-color: #FF6347;
+    font-size: 15px;
+    font-style: bold;
+    width: 80%;
+}
+
+.excluir:hover{
+    background-color: #B22222;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.form-excluir{
+    width: 50%;
+}
+
+.acoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

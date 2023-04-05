@@ -13,3 +13,9 @@ function validaSenhaUsuario(){
 }
 
 document.getElementById("salvar").onclick() = validaSenhaUsuario();
+
+/*FUNÇÕES DA TELA DE CONTROLE ADMIN*/
+function funcao1()
+{
+    alert("Eu sou um alert!");
+}

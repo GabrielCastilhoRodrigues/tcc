@@ -35,7 +35,7 @@ class CadastroController extends Controller
                 ]
             );
 
-            $request->session()->flash('ok-3', 'Dados inseridos com sucesso!');
+            $request->session()->flash('ok-1', 'Dados inseridos com sucesso!');
         }
 
         return view('cadastro');
@@ -90,8 +90,8 @@ class CadastroController extends Controller
             $request->session()->remove('ok-2');
         }
 
-        if($request->session()->has('ok-3')){
-            $request->session()->remove('ok-3');
+        if($request->session()->has('ok-1')){
+            $request->session()->remove('ok-1');
         }
     }
 }
