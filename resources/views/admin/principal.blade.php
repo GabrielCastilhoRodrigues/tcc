@@ -35,7 +35,7 @@
         @else
             <div class="logado">
                 <div class="usuario">
-                    <a href="dados-usuario" class="dadosUsuario">
+                    <a href="/dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
                         {{
                             session()->get('usuario')['nome']
                         }} 
@@ -43,7 +43,7 @@
                     </a>
                 </div>
                 <div class="button" id="menu">
-                    <a href="logout" method="POST">Logout</a>
+                    <a href="/logout">Logout</a>
                 </div>
             </div>
         @endif
@@ -94,7 +94,7 @@
 
                                     <button type="submit" class="excluir" onclick="return confirm('Deseja excluir o usuário?')">Excluir</button>
                                 </form>
-                                <a class="editar" href="#">Editar</a>
+                                <a class="editar" href="/admin-usuario/{{$usuario->id_usuario}}">Editar</a>
                             </td>
                         </tr>
                     @endforeach

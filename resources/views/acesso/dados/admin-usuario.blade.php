@@ -1,4 +1,6 @@
-@if(session()->has('usuario'))
+@if(session()->has('usuario') 
+    && session()->get('usuario')['nivel'] == 2
+    && $user)
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -71,25 +73,27 @@
     @endif
 
     <div class="cadastro">
-        <form action="{{ route('cadastro.atualizaUsuario') }}" method="POST">
+        <form action="{{ route('admin.alteraUsuario', $user->id_usuario) }}" method="POST">
             @csrf
+            @method('PUT')
+
                 <label for="nome" id="nome">Nome</label>
-                <input class="campo" type="text" name="nome" placeholder="Seu nome" size="40" value="{{session()->get('usuario')['nome']}}">
+                <input class="campo" type="text" name="nome" placeholder="Seu nome" size="40" value="{{$user->nome}}">
                 
                 <label for="dt_nascimento">Data de Nascimento</label>
-                <input class="campo" type="date" name="dt_nascimento" placeholder="99/99/9999" value="{{session()->get('usuario')['dt_nascimento']->format('Y-m-d')}}">
+                <input class="campo" type="date" name="dt_nascimento" placeholder="99/99/9999" value="{{$user->dt_nascimento->format('Y-m-d')}}">
 
                 <label for="cpf">CPF</label>
-                <input class="campo" type="text" name="cpf" placeholder="999.999.999-99" value="{{session()->get('usuario')['cpf']}}">
+                <input class="campo" type="text" name="cpf" placeholder="999.999.999-99" value="{{$user->cpf}}">
                                         
                 <label for="email">E-mail:</label>
-                <input class="campo" type="email" name="email" placeholder="Digite seu E-mail" size="50" value="{{session()->get('usuario')['email']}}">
+                <input class="campo" type="email" name="email" placeholder="Digite seu E-mail" size="50" value="{{$user->email}}">
 
                 <label for="senha">Senha:</label>
                 <input class="campo" type="password" name="senha" placeholder="Digite sua senha"size="25" required>
 
                 <label for="confirmaSenha">Confirme sua senha</label>
-			<input class="campo" type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Digite sua senha" size="25" required>
+			    <input class="campo" type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Digite sua senha" size="25" required>
 
                 <br><br>
                 <input class="acaoForm" type="submit" name="Salvar" value="Salvar">

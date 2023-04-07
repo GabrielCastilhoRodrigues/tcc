@@ -43,8 +43,11 @@ Route::get('/restaurante', [RestauranteController::class, 'index']);
 
 Route::get('/seattle', [SeattleController::class, 'index']);
 
-Route::get('/dados-usuario', [UsuarioController::class, 'index']);
+Route::get('/dados-usuario/{nivel}', [UsuarioController::class, 'index']);
 
-Route::delete('/deleta-usuario/{id_usuario}', [AdminController::class, 'deletaUsuario']);
 Route::get('/principal-admin', [AdminController::class, 'index'])->name('admin.principal');
 Route::get('/lista-usuarios', [AdminController::class, 'listagemUsuario']);
+
+Route::get('/admin-usuario/{id_usuario}', [AdminController::class, 'buscaUsuario']);
+Route::delete('/deleta-usuario/{id_usuario}', [AdminController::class, 'deletaUsuario']);
+Route::put('/altera-usuario/{id_usuario}', [AdminController::class, 'atualizaUsuario'])->name('admin.alteraUsuario');

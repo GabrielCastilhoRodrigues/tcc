@@ -35,8 +35,7 @@ class LoginController extends Controller
             }
         }
         else{
-            Log::channel('main')->info('erro de login. Email: '.$email. ' Senha: '. $senha.
-                                       Hash::check($request->senha, $usuario->senha));
+            Log::channel('main')->info('erro de login. Email: '.$email. ' Senha: '. $senha);
                                        
             session()->flash('error-1', 'Login ou senha inválidos');
 

@@ -31,7 +31,7 @@
         @else
             <div class="logado">
                 <div class="usuario">
-                    <a href="dados-usuario" class="dadosUsuario">
+                    <a href="dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
                         {{
                             session()->get('usuario')['nome']
                         }} 
@@ -39,7 +39,7 @@
                     </a>
                 </div>
                 <div class="button" id="menu">
-                    <a href="logout" method="POST">Logout</a>
+                    <a href="/logout">Logout</a>
                 </div>
             </div>
         @endif

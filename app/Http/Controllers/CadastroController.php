@@ -43,7 +43,7 @@ class CadastroController extends Controller
 
     public function atualizaUsuario(Request $request){
         $this->limpaMensagens($request);
-        
+
         if($request->senha != $request->confirmaSenha){
             $request->session()->flash('error-4', 'As senhas devem ser compatíveis');
         }
@@ -58,7 +58,6 @@ class CadastroController extends Controller
             $salvou = $usuario->update($dados);
 
             if ($salvou){
-                $request->session()->remove('error');
                 $request->session()->put('usuario', $usuario);
                 $request->session()->flash('ok-2', 'Dados alterados com sucesso!');
             }

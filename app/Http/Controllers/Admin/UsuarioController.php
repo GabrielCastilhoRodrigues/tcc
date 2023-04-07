@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
-    public function index(){
-        return view('acesso.dados.usuario');
+    public function index($nivel){
+        if ($nivel == 1){
+            return view('acesso.dados.usuario');
+        }
+        else if ($nivel == 2){
+            return redirect('/principal-admin');
+        }
     }
 }
