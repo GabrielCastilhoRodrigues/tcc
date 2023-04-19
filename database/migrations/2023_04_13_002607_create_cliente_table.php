@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (!Schema::hasTable('usuario')){
-            Schema::create('usuario', function (Blueprint $table) {
-                $table->id('id_usuario')->autoIncrement();
+        if (!Schema::hasTable('cliente')){
+            Schema::create('cliente', function (Blueprint $table) {
+                $table->id('id_cliente')->autoIncrement();
                 $table->string('nome');
                 $table->date('dt_nascimento');
                 $table->string('cpf');
@@ -21,8 +21,7 @@ return new class extends Migration
                 $table->string('senha');
                 $table->datetime('dt_cadastro');
                 $table->datetime('dt_alteracao');
-                $table->integer('nivel');
-                $table->primary('id_usuario');
+                $table->integer('ativo');
             });
         }
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_usuario');
+        Schema::dropIfExists('cliente');
     }
 };

@@ -1,31 +1,30 @@
-nav {
+.navegacao {
     display: flex;
     height: 80px;
-    width: 100%;
-    background-color: #242829;
+    background-color: #000000;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px 0 50px;
     flex-wrap: wrap;
 }
 
-nav .logo {
+.navegacao .logo-bar {
     color: white;
     font-size: 35px;
     font-weight: 600;
     cursor: pointer;
 }
 
-nav ul {
+.navegacao ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-nav ul li {
+.navegacao ul li {
     margin-right: 20px;
 }
 
-nav ul li a {
+.navegacao ul li a {
     color: white;
     font-size: 18px;
     font-weight: 500;
@@ -35,11 +34,11 @@ nav ul li a {
     transition: all 0.3s easy;
 }
 
-nav ul li a:hover {
+.navegacao ul li a:hover {
     background: #444443;
 }
 
-nav .menu-btn i {
+.navegacao .menu-btn i {
     color: white;
     cursor: pointer;
     display: none;
@@ -111,7 +110,7 @@ footer {
     position: relative;
     bottom: 0px;
     width: 100%;
-    background-color: #222222;
+    background-color: #000000;
 }
 
 .main-content {
@@ -368,10 +367,10 @@ textarea,
 }
 
 @media (max-width: 920px) {
-    nav .menu-btn i {
+    .navegacao .menu-btn i {
         display: block;
     }
-    nav ul {
+    .navegacao ul {
         position: fixed;
         top: 80px;
         left: -100%;
@@ -382,18 +381,18 @@ textarea,
         display: block;
         transition: all 0.3s easy;
     }
-    nav ul.open {
+    .navegacao ul.open {
         left: 0;
     }
-    nav ul li {
+    .navegacao ul li {
         width: 100%;
         margin: 50px 0;
     }
-    nav ul li a {
+    .navegacao ul li a {
         font-size: 23px;
     }
-    nav ul li a.active,
-    nav ul li a:hover {
+    .navegacao ul li a.active,
+    .navegacao ul li a:hover {
         background: none;
         color: #444443;
         ;
@@ -483,7 +482,7 @@ textarea,
 }
 
 @media screen and (max-width:720px) {
-    nav {
+    .navegacao {
         padding: 0 50px 0 30px;
     }
     .container {
@@ -630,7 +629,7 @@ textarea,
         display: flex;
         width: 100%;
     }
-    .logo img {
+    .logo-bar img {
         width: 50px;
         position: relative;
         left: 10px;
@@ -713,10 +712,10 @@ textarea,
 }
 
 @media screen and (max-width: 479px) {
-    nav .logo {
+    .navegacao .logo-bar {
         font-size: 25px;
     }
-    nav {
+    .navegacao {
         padding: 0 30px 0 30px;
     }
     .container {
@@ -757,7 +756,7 @@ textarea,
 }
 
 @media screen and (max-width: 455px) {
-    nav .logo {
+    .navegacao .logo-bar {
         font-size: 25px;
     }
     .container {
@@ -798,7 +797,7 @@ textarea,
 }
 
 @media screen and (max-width: 438px) {
-    nav .logo {
+    .navegacao .logo-bar {
         font-size: 25px;
     }
     .container {
@@ -839,7 +838,7 @@ textarea,
 }
 
 @media screen and (max-width: 387px) {
-    nav .logo {
+    .navegacao .logo-bar {
         font-size: 25px;
     }
     .container {
@@ -880,7 +879,7 @@ textarea,
 }
 
 @media screen and (max-width: 363px) {
-    nav .logo {
+    .navegacao .logo-bar {
         font-size: 25px;
     }
     .container {
@@ -921,10 +920,10 @@ textarea,
 }
 
 @media screen and (max-width: 343px) {
-    nav {
+    .navegacao {
         padding: 0 20px 0 20px;
     }
-    nav .logo {
+    .navegacao .logo-bar {
         font-size: 25px;
     }
     .container {
@@ -947,10 +946,9 @@ textarea,
         font-size: 28px;
     }
     .foto h3 {
-        font-size: 14px;
         position: relative;
         left: 10px;
-        bottom: 15px;
+        bottom: 18px;
     }
     footer {
         position: relative;
@@ -966,7 +964,7 @@ textarea,
 }
 
 @media screen and (max-width: 283px) {
-    nav .logo {
+    .navegacao .logo-bar {
         font-size: 25px;
     }
     .container {
@@ -989,10 +987,10 @@ textarea,
         font-size: 28px;
     }
     .foto h3 {
-        font-size: 14px;
         position: relative;
         left: 10px;
-        bottom: 15px;
+        bottom: 18px;
+        font-size: 18px;
     }
     footer {
         position: relative;
@@ -1014,7 +1012,7 @@ textarea,
     width: 100vw;
 }
 
-.logo img {
+.logo-bar img {
     width: 150px;
     cursor: pointer;
 }

@@ -37,6 +37,12 @@ class AdminController extends Controller
         session()->put('usuarios', $usuarios);
     }
 
+    public function listagemContrato(){
+        //
+
+        return view('admin.principal-contrato');
+    }
+
     public function limpaSessao(){
         if (session()->has('usuarios')){
             session()->remove('usuarios');

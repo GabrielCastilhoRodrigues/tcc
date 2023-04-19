@@ -4,8 +4,62 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class Cliente extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
+
+    //Define o nome da tabela
+    public $table = 'cliente';
+
+    //Define que não terá o campo padrão de update e create do laravel
+    public $timestamps = false;
+
+    //Define o nome da chave primária da tabela
+    public $primaryKey = 'id_cliente';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'nome',
+        'dt_nascimento',
+        'cpf',
+        'email',
+        'senha',
+        'dt_cadastro',
+        'dt_alteracao',
+        'ativo',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'senha',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'nome' => 'string',
+        'cpf' => 'string',
+        'email' => 'string',
+        'senha' => 'string',
+        'dt_cadastro' => 'datetime',
+        'dt_alteracao' => 'datetime',
+        'dt_nascimento' => 'date',
+        'ativo' => 'int',
+    ];
+
+
 }

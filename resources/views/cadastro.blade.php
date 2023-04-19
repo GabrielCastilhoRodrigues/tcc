@@ -13,37 +13,45 @@
 
 <body>
 	
-	<!--section navbar-->
-    <section class="navbar">
-        <div class="logo">
-            <a href="/">
-                <img src="/assets/img/principal/logo.png" alt="Logo">
-            </a>
-        </div>
+	<nav>
+        <a href="/" class="link-logo">
+            <img src="/assets/img/principal/logo.png" alt="Logo" class="logo">
+        </a>
 
-        <h1 class="title">Aqui você encontra os melhores lugares!</h1>
+        <h1 class="title" class="titulo">Aqui você encontra os melhores lugares!</h1>
 
-        @if(!session()->has('usuario'))
-            <div class="button" id="menu">
-                <a href="cadastro">Cadastro</a>
-                <a href="login">Login</a>
-            </div>
-        @else
-			<div class="logado">
-				<div class="usuario">
-					<a href="/dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
-						{{
-							session()->get('usuario')['nome']
-						}} 
-						<i class="fa-solid fa-user"></i>
-					</a>
-				</div>
-				<div class="button" id="menu">
-					<a href="/logout">Logout</a>
-				</div>
-			</div>
-        @endif
-    </section>
+        <ul class="ul-principal">
+
+            @if(!session()->has('usuario'))
+                <li class="li-nav">
+                    <a href="#" class="bt-cad">Cadastro</a>
+                    <ul class="cadastros">
+                        <li><a href="#">Usuário</a></li>
+                        <li><a href="#">Cliente</a></li>
+                    </ul>
+                </li>
+                <li class="li-nav">
+                    <a href="#" class="bt-log">Login</a>
+                    <ul class="logins">
+                        <li><a href="login">Usuário</a></li>
+                        <li><a href="#">Cliente</a></li>
+                    </ul>
+                </li>
+            @else
+                <li class="li-nav">
+                    <a href="dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
+                        {{
+                            session()->get('usuario')['nome']
+                        }} 
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li class="li-nav">
+                    <a href="/logout">Logout</a>
+                </li>
+            @endif
+        </ul>
+    </nav>
 
 	<h1>Cadastro de Usuário</h1>
 
@@ -91,4 +99,5 @@
 	</form>
 
 </body>
+<script src="/assets/js/controle-acesso.js"></script>
 </html>

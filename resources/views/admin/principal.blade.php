@@ -52,14 +52,13 @@
     <div class="conteudo">
         <div class="navbar-lateral">
             <div class="conteudo-navbar">
-                <a href="#" class="item-navbar">Listagem de Usuários</a></li>
-                <a href="#" class="item-navbar">Listagem de Contratos</a></li>
+                <a href="/dados-usuario/{{session()->get('usuario')['nivel']}}" class="item-navbar">Listagem de Usuários</a></li>
+                <a href="/lista-contratos" class="item-navbar">Listagem de Contratos</a></li>
                 <a href="#" class="item-navbar">Listagem de Clientes</a></li>
             </div>
         </div>
         <div class="conteudo-admin">
-            <h1>Bem vindo de volta Admin</h1>
-            <h3>Listagem de Usuários</h3>
+            <h2>Listagem de Usuários</h2>
 
             @if (session()->has('error-5'))
                 <div class="retorno">
