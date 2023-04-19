@@ -1,0 +1,24 @@
+.listagem {
+    background-color: #007bff;
+    color: white;
+    display: block;
+}
+
+.insereContrato {
+    background-color: #007bff;
+    margin: 2%;
+    padding: 5px;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.insereContrato:hover{
+    background-color: gray;
+}
+
+.form-cadastro{
+    background-color: #007bff;
+    color: white;
+    display: none;    
+}

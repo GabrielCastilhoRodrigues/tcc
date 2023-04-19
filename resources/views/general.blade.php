@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/estabelecimento-comida.css">
     <link rel="stylesheet" type="text/css" href="assets/css/body.css">
     <link rel="stylesheet" href="/assets/css/opcoes.css"> 
     <script src="https://kit.fontawesome.com/e6a3d86f14.js" crossorigin="anonymous"></script>
@@ -13,39 +13,48 @@
 </head>
 
 <body>
-    <section class="navbar">
-        <div class="logo">
-            <a href="/">
-                <img src="/assets/img/principal/logo.png" alt="Logo">
-            </a>
-        </div>
-        
-        <h1 class="title">Aqui você encontra os melhores lugares!</h1>
+    <nav>
+        <a href="/" class="link-logo">
+            <img src="/assets/img/principal/logo.png" alt="Logo" class="logo">
+        </a>
 
-        @if(!session()->has('usuario'))
-            <div class="button" id="menu">
-                <a href="cadastro">Cadastro</a>
-                <a href="login">Login</a>
-            </div>
-        @else
-            <div class="logado">
-                <div class="usuario">
-                    <a href="/dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
+        <h1 class="title" class="titulo">Aqui você encontra os melhores lugares!</h1>
+
+        <ul class="ul-principal">
+
+            @if(!session()->has('usuario'))
+                <li class="li-nav">
+                    <a href="#" class="bt-cad">Cadastro</a>
+                    <ul class="cadastros">
+                        <li><a href="cadastro">Usuário</a></li>
+                        <li><a href="#">Cliente</a></li>
+                    </ul>
+                </li>
+                <li class="li-nav">
+                    <a href="#" class="bt-log">Login</a>
+                    <ul class="logins">
+                        <li><a href="login">Usuário</a></li>
+                        <li><a href="#">Cliente</a></li>
+                    </ul>
+                </li>
+            @else
+                <li class="li-nav">
+                    <a href="dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
                         {{
                             session()->get('usuario')['nome']
                         }} 
                         <i class="fa-solid fa-user"></i>
                     </a>
-                </div>
-                <div class="button" id="menu">
+                </li>
+                <li class="li-nav">
                     <a href="/logout">Logout</a>
-                </div>
-            </div>
-        @endif
-    </section>
+                </li>
+            @endif
+        </ul>
+    </nav>
 
-    <nav>
-        <div class="logo">
+    <nav class="navegacao">
+        <div class="logo-bar">
             General Burgues
         </div>
 
@@ -53,12 +62,10 @@
             <i class="fa fa-bars fa-2x"></i>
         </div>
 
-        <ul>
-
+        <ul class="menu-ul">
             <li><a href="#sobre ">Sobre</a></li>
             <li><a href="#endereco ">Endereço</a></li>
             <li><a href="#contato ">Contato</a></li>
-
         </ul>
     </nav>
 
@@ -153,7 +160,7 @@
                 <div class="content ">
                     <p>Lorem ipsum dolor sit amet consectetur adipsicing elit.amet iste facilis harum eos vel incidunt distinctio corrupti iure? rem</p>
 
-                    <div class="social ">
+                    <div class="social">
                         <a href=" "><span class="fab fa-facebook-f "></span></a>
                         <a href=" "><span class="fab fa-twitter "></span></a>
                         <a href=" "><span class="fab fa-instagram "></span></a>
@@ -212,5 +219,5 @@
 
 
 </body>
-
+<script src="/assets/js/controle-acesso.js"></script>
 </html>

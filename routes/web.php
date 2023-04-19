@@ -51,3 +51,7 @@ Route::get('/lista-usuarios', [AdminController::class, 'listagemUsuario']);
 Route::get('/admin-usuario/{id_usuario}', [AdminController::class, 'buscaUsuario']);
 Route::delete('/deleta-usuario/{id_usuario}', [AdminController::class, 'deletaUsuario']);
 Route::put('/altera-usuario/{id_usuario}', [AdminController::class, 'atualizaUsuario'])->name('admin.alteraUsuario');
+
+Route::get('/lista-contratos', [AdminController::class, 'listagemContrato']);
+
+Route::get('/lista-clientes', [AdminController::class, 'listagemCliente']);
