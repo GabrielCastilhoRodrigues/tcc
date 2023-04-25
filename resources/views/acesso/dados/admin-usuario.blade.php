@@ -105,6 +105,7 @@
         </form>
     </div>
 </body>
+<script src="/assets/js/controle-acesso.js"></script>
 </html>
 
 @else
