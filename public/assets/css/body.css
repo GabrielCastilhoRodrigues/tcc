@@ -35,6 +35,11 @@ body {
     width: 60%;
 }
 
+.titulo{
+    padding-top: 5%;
+    font-size: 30px;
+}
+
 .subtitulo {
     padding-top: 100px;
     font-size: 30px;

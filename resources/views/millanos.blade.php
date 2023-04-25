@@ -41,7 +41,7 @@
                 <li class="li-nav">
                     <a href="dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
                         {{
-                            session()->get('usuario')['nome']
+                            implode(' ', array_slice(explode(' ', session()->get('usuario')['nome']), 0, 2))
                         }} 
                         <i class="fa-solid fa-user"></i>
                     </a>

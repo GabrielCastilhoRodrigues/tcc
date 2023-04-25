@@ -17,37 +17,45 @@
     </head>
 
     <body>
-        <!--section navbar-->
-        <section class="navbar">
-            <div class="logo">
-                <a href="/">
-                    <img src="/assets/img/principal/logo.png" alt="Logo">
-                </a>
-            </div>
-
-            <h1 class="title">Aqui você encontra os melhores lugares!</h1>
-
-            @if(!session()->has('usuario'))
-                <div class="button" id="menu">
-                    <a href="cadastro">Cadastro</a>
-                    <a href="login">Login</a>
-                </div>
-            @else
-                <div class="logado">
-                    <div class="usuario">
-                        <a href="/dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
+        <nav>
+            <a href="/" class="link-logo">
+                <img src="/assets/img/principal/logo.png" alt="Logo" class="logo">
+            </a>
+    
+            <h1 class="title" class="titulo">Aqui você encontra os melhores lugares!</h1>
+    
+            <ul class="ul-principal">
+    
+                @if(!session()->has('usuario'))
+                    <li class="li-nav">
+                        <a href="#" class="bt-cad">Cadastro</a>
+                        <ul class="cadastros">
+                            <li><a href="cadastro">Usuário</a></li>
+                            <li><a href="#">Cliente</a></li>
+                        </ul>
+                    </li>
+                    <li class="li-nav">
+                        <a href="#" class="bt-log">Login</a>
+                        <ul class="logins">
+                            <li><a href="login">Usuário</a></li>
+                            <li><a href="#">Cliente</a></li>
+                        </ul>
+                    </li>
+                @else
+                    <li class="li-nav">
+                        <a href="dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
                             {{
-                                session()->get('usuario')['nome']
+                                implode(' ', array_slice(explode(' ', session()->get('usuario')['nome']), 0, 2))
                             }} 
                             <i class="fa-solid fa-user"></i>
                         </a>
-                    </div>
-                    <div class="button" id="menu">
+                    </li>
+                    <li class="li-nav">
                         <a href="/logout">Logout</a>
-                    </div>
-                </div>
-            @endif
-        </section>
+                    </li>
+                @endif
+            </ul>
+        </nav>
         
         <div class="conteudo">
             <div class="navbar-lateral">
@@ -60,7 +68,7 @@
 
             <div class="conteudo-admin">
 
-                <h2>Listagem de Contratos</h2>
+                <h2 class="titulo">Listagem de Contratos</h2>
                 <br>
                 <button class="insereContrato" id='view'>Insere Contrato</button>
 
