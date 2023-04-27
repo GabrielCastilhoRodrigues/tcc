@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="assets/css/cadastro.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/body.css">
-	<script type="text/javascript" src="/assets/js/script.js"></script>
-	<script type="text/javascript" src="/assets/js/validacoes.js"></script>
-	<script src="https://kit.fontawesome.com/a97d3ea7a7.js" crossorigin="anonymous"></script>
-	<title>Cadastro</title>
-</head>
+@extends('templates.navbar')
 
-<body>
-	
-	<nav>
-        <a href="/" class="link-logo">
-            <img src="/assets/img/principal/logo.png" alt="Logo" class="logo">
-        </a>
+@section('title', 'Cadastro de Usuario')
 
-        <h1 class="title" class="titulo">Aqui você encontra os melhores lugares!</h1>
-
-        <ul class="ul-principal">
-
-            @if(!session()->has('usuario'))
-                <li class="li-nav">
-                    <a href="#" class="bt-cad">Cadastro</a>
-                    <ul class="cadastros">
-                        <li><a href="#">Usuário</a></li>
-                        <li><a href="#">Cliente</a></li>
-                    </ul>
-                </li>
-                <li class="li-nav">
-                    <a href="#" class="bt-log">Login</a>
-                    <ul class="logins">
-                        <li><a href="login">Usuário</a></li>
-                        <li><a href="#">Cliente</a></li>
-                    </ul>
-                </li>
-            @else
-                <li class="li-nav">
-                    <a href="dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
-                        {{
-                            implode(' ', array_slice(explode(' ', session()->get('usuario')['nome']), 0, 2))
-                        }} 
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                </li>
-                <li class="li-nav">
-                    <a href="/logout">Logout</a>
-                </li>
-            @endif
-        </ul>
-    </nav>
-
+@section('content')
 	<h1>Cadastro de Usuário</h1>
 
 	@if (session()->has('error-4'))
@@ -97,7 +47,4 @@
 			<br><br>
 		</div>
 	</form>
-
-</body>
-<script src="/assets/js/controle-acesso.js"></script>
-</html>
+@endsection

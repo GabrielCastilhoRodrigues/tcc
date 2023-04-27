@@ -13,6 +13,10 @@ class CadastroController extends Controller
         return view('cadastros.cadastro');
     }
 
+    public function cadastroCliente(Request $request){
+        return view('cadastros.cadastro-cliente');
+    }
+
     public function insereUsuario(Request $request){
         $this->limpaMensagens($request);
 

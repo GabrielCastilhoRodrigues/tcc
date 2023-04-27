@@ -23,6 +23,9 @@ Route::get('/bar', [BarController::class, 'index']);
 
 Route::get('/cadastro', [CadastroController::class, 'cadastroUsuario'])->name('cadastro.usuario');
 Route::post('/cadastro', [CadastroController::class, 'insereUsuario'])->name('cadastro.insereUsuario');
+
+Route::get('/cadastro-cliente', [CadastroController::class, 'cadastroCliente']);
+
 Route::post('/atualiza-usuario', [CadastroController::class, 'atualizaUsuario'])->name('cadastro.atualizaUsuario');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login.usuario');
