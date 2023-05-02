@@ -10,7 +10,8 @@
 
         <ul class="ul-principal">
 
-            @if(!session()->has('usuario'))
+            @if(!session()->has('usuario') &&
+                !session()->has('cliente'))
                 <li class="li-nav">
                     <a href="#" class="bt-cad">Cadastro</a>
                     <ul class="cadastros">
@@ -25,7 +26,7 @@
                         <li><a href="login-cliente">Cliente</a></li>
                     </ul>
                 </li>
-            @else
+            @elseif(session()->has('usuario'))
                 <li class="li-nav">
                     <a href="/dados-usuario/{{session()->get('usuario')['nivel']}}" class="dadosUsuario">
                         {{
@@ -36,6 +37,18 @@
                 </li>
                 <li class="li-nav">
                     <a href="/logout">Logout</a>
+                </li>
+            @else
+                <li class="li-nav">
+                    <a href="/dados-usuario/{{session()->get('cliente')['ativo']}}" class="dadosUsuario">
+                        {{
+                            implode(' ', array_slice(explode(' ', session()->get('cliente')['nome']), 0, 2))
+                        }} 
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li class="li-nav">
+                    <a href="/logout-cliente">Logout</a>
                 </li>
             @endif
         </ul>

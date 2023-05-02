@@ -17,7 +17,7 @@ return new class extends Migration
                 $table->string('nome');
                 $table->date('dt_nascimento');
                 $table->string('cpf');
-                $table->string('email');
+                $table->string('email')->unique();
                 $table->string('senha');
                 $table->datetime('dt_cadastro');
                 $table->datetime('dt_alteracao');

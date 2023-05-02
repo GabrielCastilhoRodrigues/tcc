@@ -1,6 +1,6 @@
 @extends('templates.navbar')
 
-@section('title', 'Login Usuário')
+@section('title', 'Login Cliente')
 
 @section('content')
     <div class="cadastro">
@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login.conectaUsuario') }}">
+        <form method="POST" action="{{ route('login.conectaCliente') }}">
             @csrf
 
             <label>Email</label>
@@ -29,4 +29,4 @@
             </div>
         </form>
     </div>
-@endsection
+@endsection 

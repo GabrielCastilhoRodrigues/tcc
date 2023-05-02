@@ -24,13 +24,18 @@ Route::get('/bar', [BarController::class, 'index']);
 Route::get('/cadastro', [CadastroController::class, 'cadastroUsuario'])->name('cadastro.usuario');
 Route::post('/cadastro', [CadastroController::class, 'insereUsuario'])->name('cadastro.insereUsuario');
 
-Route::get('/cadastro-cliente', [CadastroController::class, 'cadastroCliente']);
+Route::get('/cadastro-cliente', [CadastroController::class, 'cadastroCliente'])->name('cadastro.cliente');
+Route::post('/cadastro-cliente', [CadastroController::class, 'insereCliente'])->name('cadastro.insereCliente');
 
 Route::post('/atualiza-usuario', [CadastroController::class, 'atualizaUsuario'])->name('cadastro.atualizaUsuario');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.usuario');
+Route::get('/login', [LoginController::class, 'loginUsuario'])->name('login.usuario');
 Route::post('/login', [LoginController::class, 'conectaUsuario'])->name('login.conectaUsuario');
-Route::get('/logout', [LoginController::class, 'logout'])->name('login.logoutUsuario');
+Route::get('/logout', [LoginController::class, 'logoutUsuario'])->name('login.logoutUsuario');
+
+Route::get('/login-cliente', [LoginController::class, 'loginCliente'])->name('login.cliente');
+Route::post('/login-cliente', [LoginController::class, 'conectaCliente'])->name('login.conectaCliente');
+Route::get('/logout-cliente', [LoginController::class, 'logoutCliente'])->name('logout.cliente');
 
 Route::get('/general', [GeneralController::class, 'index']);
 

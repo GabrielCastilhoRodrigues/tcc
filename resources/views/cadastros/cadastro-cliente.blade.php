@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<h1>Cadastro de Usuário</h1>
+	<h1>Cadastro de Cliente</h1>
 
 	@if (session()->has('error-4'))
 		<div class="retorno">
@@ -20,7 +20,7 @@
 		</div>
     @endif
 	
-	<form action="{{ route('cadastro.insereUsuario') }}" method="POST">
+	<form action="{{ route('cadastro.insereCliente') }}" method="POST">
 		@csrf
 
 		<div class="cadastro">
@@ -48,7 +48,4 @@
 			<br><br>
 		</div>
 	</form>
-
-</body>
-<script src="/assets/js/controle-acesso.js"></script>
-</html>
+@endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
@@ -42,7 +43,35 @@ class CadastroController extends Controller
             $request->session()->flash('ok-1', 'Dados inseridos com sucesso!');
         }
 
-        return view('cadastro');
+        return view('cadastros.cadastro');
+    }
+
+    public function insereCliente(Request $request){
+        $this->limpaMensagens($request);
+
+        $dataAtual = new DateTime;
+
+        if($request->senha != $request->confirmaSenha){
+            $request->session()->flash('error-4', 'As senhas devem ser compatíveis');
+        }
+        else{
+            Cliente::create(
+                [   
+                    'nome' => $request->nome,
+                    'dt_nascimento' => $request->dt_nascimento,
+                    'cpf' => $request->cpf,
+                    'email' => $request->email,
+                    'senha' => Hash::make($request->senha),
+                    'dt_cadastro' => $dataAtual,
+                    'dt_alteracao' => $dataAtual,
+                    'ativo' => 1
+                ]
+            );
+
+            $request->session()->flash('ok-1', 'Dados inseridos com sucesso!');
+        }
+
+        return view('cadastros.cadastro-cliente');
     }
 
     public function atualizaUsuario(Request $request){
